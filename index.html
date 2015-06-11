@@ -7,6 +7,18 @@
   <style>
     * {
       font-family: "Helvetica Neue", Helvetica, sans-serif;
+      color: #444;
+    }
+    a {
+      font-weight: bold;
+      color: #ff6600
+    }
+    pre {
+      font-family: "Source Code Pro", Consolas, monospace;
+      background: #f3f3f3;
+      padding: 1rem;
+      border-radius: 0.25rem;
+      border: 1px solid #eee;
     }
     .col {
       text-align: center;
@@ -17,24 +29,30 @@
     .col>div {
       padding: 1em;
       background: #eaeaea;
+      border-radius: 0.25rem;
+      border: 1px solid #e1e1e1;
     }
     .col:nth-child(odd)>div {
       background: #f3f3f3;
+      border: 1px solid #eee;
+    }
+    .col .r0 {
+      border-radius: 0;
+      border-left: 0;
+      border-right: 0;
+    }
+    .col .rr0 {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .col .rl0 {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
     }
     .container {
       padding: 1em;
       max-width: 60em;
       margin: 0 auto;
-    }
-    pre {
-      font-family: "Source Code Pro", Consolas, monospace;
-      background: #f3f3f3;
-      border-radius: 0.25rem;
-      padding: 1rem;
-    }
-    a {
-      font-weight: bold;
-      color: #FF6600
     }
   </style>
   <link rel="stylesheet" href="nanogrid.css">
@@ -45,25 +63,26 @@
     <h1><a href="http://github.com/firedev/nanogrid">nanogrid</a></h1>
     <h2>Lightweight liquid responsive SASS/CSS grid with gutters</h2>
     <p>
-      Inspired by Ungrid and BASSCSS I have decided to combine the power of both... And add gutters.
+      Inspired by Ungrid and BASSCSS I have decided to combine the power of both... And
+      add gutters.
     </p>
   </div>
   <div class="container">
     <h2>Installation</h2>
     <p>You need only one file.</a>
-    <pre>http://firedev.github.io/nanogrid/nanogrid.css</pre>
-    <h4>Git</h4>
-    <pre>$ git clone http://github.com/firedev/nanogrid</pre>
-    <h4>Bower</h4>
-    <pre>$ bower install nanogrid</pre>
-    <h4>Ruby on Rails</h4>
+      <pre>http://firedev.github.io/nanogrid/nanogrid.css</pre>
+      <h4>Git</h4>
+      <pre>$ git clone http://github.com/firedev/nanogrid</pre>
+      <h4>Bower</h4>
+      <pre>$ bower install nanogrid</pre>
+      <h4>Ruby on Rails</h4>
 
-<pre>
+      <pre>
 source 'https://rails-assets.org' do
   gem 'rails-assets-nanogrid'
 end</pre>
 
-<pre>
+      <pre>
 // import 'nanogrid'</pre>
 
   </div>
@@ -76,6 +95,23 @@ $nanogrid-breakpoint: 30rem !default</pre>
   <div class="container">
     <h2>Examples</h2>
     <h3>Equal width</h3>
+    <div class="row">
+      <div class="col">
+        <div>µ</div>
+      </div>
+      <div class="col">
+        <div>µ</div>
+      </div>
+      <div class="col">
+        <div>µ</div>
+      </div>
+      <div class="col">
+        <div>µ</div>
+      </div>
+      <div class="col">
+        <div>µ</div>
+      </div>
+    </div>
     <pre>
 &lt;div class="row"&gt;
   &lt;div class="col"&gt;&lt;/div&gt;
@@ -85,26 +121,26 @@ $nanogrid-breakpoint: 30rem !default</pre>
   &lt;div class="col"&gt;&lt;/div&gt;
 &lt;/div&gt;</pre>
   </div>
-  <div class="row">
-    <div class="col">
-      <div>µ</div>
-    </div>
-    <div class="col">
-      <div>µ</div>
-    </div>
-    <div class="col">
-      <div>µ</div>
-    </div>
-    <div class="col">
-      <div>µ</div>
-    </div>
-    <div class="col">
-      <div>µ</div>
-    </div>
-  </div>
 
   <div class="container">
     <h3>Variable width</h3>
+    <div class="row">
+      <div class="col">
+        <div>µ</div>
+      </div>
+      <div class="col">
+        <div>µ</div>
+      </div>
+      <div class="col col-6">
+        <div>µ.col-6</div>
+      </div>
+      <div class="col">
+        <div>µ</div>
+      </div>
+      <div class="col">
+        <div>µ</div>
+      </div>
+    </div>
     <pre>
 &lt;div class="row"&gt;
   &lt;div class="col"&gt;&lt;/div&gt;
@@ -114,27 +150,21 @@ $nanogrid-breakpoint: 30rem !default</pre>
   &lt;div class="col"&gt;&lt;/div&gt;
 &lt;/div&gt;</pre>
   </div>
-  <div class="row">
-    <div class="col">
-      <div>µ</div>
-    </div>
-    <div class="col">
-      <div>µ</div>
-    </div>
-    <div class="col col-6">
-      <div>µ.col-6</div>
-    </div>
-    <div class="col">
-      <div>µ</div>
-    </div>
-    <div class="col">
-      <div>µ</div>
-    </div>
-  </div>
 
   <div class="container">
     <h3>No gutters</h3>
     <p>This uses BASSCSS approach so you have to specify widths.</p>
+    <div class="clearfix">
+      <div class="col col-4">
+        <div class="rr0">µ</div>
+      </div>
+      <div class="col col-4">
+        <div class="r0">µ</div>
+      </div>
+      <div class="col col-4">
+        <div class="rl0">µ</div>
+      </div>
+    </div>
     <pre>
 &lt;div class="clearfix"&gt;
   &lt;div class="col col-4"&gt;&lt;/div&gt;
@@ -142,17 +172,6 @@ $nanogrid-breakpoint: 30rem !default</pre>
   &lt;div class="col col-4"&gt;&lt;/div&gt;
 &lt;/div&gt;</pre>
 
-    <div class="clearfix">
-      <div class="col col-4">
-        <div>µ</div>
-      </div>
-      <div class="col col-4">
-        <div>µ</div>
-      </div>
-      <div class="col col-4">
-        <div>µ</div>
-      </div>
-    </div>
   </div>
 
   <div class="container">
@@ -163,4 +182,5 @@ $nanogrid-breakpoint: 30rem !default</pre>
     </center>
   </div>
 </body>
+
 </html>
