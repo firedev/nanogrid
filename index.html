@@ -8,6 +8,7 @@
     body {
       font-family: "Helvetica Neue", Helvetica, sans-serif;
       color: #444;
+      overflow-x: hidden;
     }
     a, .col b, .col-6 b {
       font-weight: bold;
@@ -27,12 +28,12 @@
       padding: 1rem;
       border: 1px solid #eee;
       color: #666;
+      overflow: hidden;
     }
     .row {
       margin-bottom: 1rem;
     }
     .col {
-      height: 3em;
       vertical-align: middle;
       position: relative
     }
@@ -43,6 +44,12 @@
       border-radius: 0.25rem;
       border: 1px solid #e1e1e1;
       text-align: center;
+    }
+    .border,
+    .col>div,
+    .col-6>div {
+      border-radius: 0.25rem;
+      border: 1px solid #e1e1e1;
     }
     .col:nth-child(odd)>div {
       background: #f3f3f3;
@@ -298,7 +305,7 @@
         </div>
       </div>
 
-      <div class="container">
+      <div class="container" id="left_aligned">
         <h2>Left aligned</h2>
         <p>Simply set width with <code>.col-X</code>, in fact you can use .col-x freely on elements. They obey breakpoint.</p>
 
@@ -309,7 +316,7 @@
         <pre>
 &lt;div class="col-6"&gt;&lt;/div&gt;</pre>
       </div>
-      <div class="container">
+      <div class="container" id="centered">
         <h2>Centered</h2>
         <p>Since <code>.col-X</code> just setting up width you don't need anyhing other than <code>.col-auto</code> for centering:<p>
 
@@ -321,7 +328,7 @@
 &lt;div class="col-6 col-center"&gt;&lt;/div&gt;</pre>
       </div>
 
-      <div class="container">
+      <div class="container" id="right_aligned">
         <h2>Right-aligned</h2>
         <p><code>.col-right</code> on the other hand requires some form of clearfix (provided):<p>
 
@@ -342,13 +349,17 @@
         <p>This one is hard to beat using conventional grids.</p>
 
         <div class="row">
-          <div class="col"><div>µ</div><br/><br/><br/><br/><br/><br/><br/></div>
-          <div class="col col-middle"><div><b>µ.col-middle</b></div></div>
-          <div class="col col-bottom"><div><b>µ.col-bottom</b></div></div>
+          <div class="col border "><div>µ</div><br/><br/><br/><br/><br/><br/><br/></div>
+          <div class="col border col-middle"><div><b>µ.col-middle</b></div></div>
+          <div class="col border col-bottom"><div><b>µ.col-bottom</b></div></div>
         </div>
 
-        <pre>
-&lt;div class="col-6"&gt;&lt;/div&gt;</pre>
+          <pre>
+&lt;div class="row"&gt;
+  &lt;div class="col"&gt;&lt;/div&gt;
+  &lt;div class="col col-middle"&gt;&lt;/div&gt;
+  &lt;div class="col col-bottom"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
       </div>
 
       <div class="container">
