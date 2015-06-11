@@ -1,5 +1,5 @@
 # nanogrid
-## Lightweight SASS/CSS grid with gutters
+## Lightweight fluid SASS/CSS grid with gutters
 
 ![nanogrid screenhot](http://firedev.github.io/nanogrid.png)
 
