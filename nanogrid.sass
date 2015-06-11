@@ -1,0 +1,37 @@
+// http://github.firedev.io/nanogrid
+
+$nanogrid-gutter: 1rem !default
+$nanogrid-breakpoint: 30rem !default
+
+@media (min-width: $nanogrid-breakpoint)
+  .row
+    display: table
+    table-layout: fixed
+    width: calc(100% + #{$nanogrid-gutter})
+    margin: 0 #{-$nanogrid-gutter/2}
+    .col
+      float: none
+      display: table-cell
+      padding: 0 #{$nanogrid-gutter/2}
+
+  .col
+    float: left
+    box-sizing: border-box
+
+  .col-right
+    float: right
+    box-sizing: border-box
+
+  @for $i from 1 through 12
+    .col-#{$i}
+      width: #{$i/12 * 100%}
+    .row .col-#{$i}
+      float: none
+
+.row .col
+  float: none
+
+.clearfix::after
+  clear: both
+  content: ""
+  display: table

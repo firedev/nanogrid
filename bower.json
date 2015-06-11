@@ -1,0 +1,26 @@
+{
+  "name": "nanogrid",
+  "version": "0.0.0",
+  "homepage": "http://firedev.github.io/nanogrid",
+  "authors": [
+    "Nick Ostrovsky <nick@firedev.com>"
+  ],
+  "description": "Lightweight SASS/CSS grid with gutters",
+  "main": "nanogrid.css",
+  "keywords": [
+    "grid",
+    "css",
+    "sass",
+    "nanogrid",
+    "responsive",
+    "gutters"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

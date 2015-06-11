@@ -1,2 +1,4 @@
 # nanogrid.css
-nanogrid.css – Smallest CSS grid with gutters
+## Lightweight SASS/CSS grid with gutters
+
+[firedev.github.io/nanogrid](http://firedev.github.io/nanogrid)

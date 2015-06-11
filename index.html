@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>nanogrid.css</title>
+  <style>
+    * {
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+    }
+    .col {
+      text-align: center;
+      height: 3em;
+      vertical-align: middle;
+      position: relative
+    }
+    .col>div {
+      padding: 1em;
+      background: #eaeaea;
+    }
+    .col:nth-child(odd)>div {
+      background: #f3f3f3;
+    }
+    .container {
+      padding: 1em;
+      max-width: 60em;
+      margin: 0 auto;
+    }
+    pre {
+      font-family: "Source Code Pro", Consolas, monospace;
+      background: #f3f3f3;
+      border-radius: 0.25rem;
+      padding: 1rem;
+    }
+    a {
+      font-weight: bold;
+      color: #FF6600
+    }
+  </style>
+  <link rel="stylesheet" href="nanogrid.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>nanogrid</h1>
+    <h2>Lightweight responsive SASS/CSS grid with gutters</h2>
+    <p>Inspired by Ungrid and BASSCSS I have decided to build on top of their shoulders.
+      Welcome the <a href="github.com/firedev/nanogrid">nanogrid</a>.</p>
+  </div>
+  <div class="container">
+    <h3>SASS Variables</h3>
+    <pre>
+$nanogrid-gutter: 2rem !default
+$nanogrid-breakpoint: 30rem !default</pre>
+  </div>
+  <div class="container">
+    <h3>Equal width</h3>
+    <pre>
+&lt;div class="row"&gt;
+  &lt;div class="col"&gt;&lt;/div&gt;
+  &lt;div class="col"&gt;&lt;/div&gt;
+  &lt;div class="col"&gt;&lt;/div&gt;
+  &lt;div class="col"&gt;&lt;/div&gt;
+  &lt;div class="col"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div>µ</div>
+    </div>
+    <div class="col">
+      <div>µ</div>
+    </div>
+    <div class="col">
+      <div>µ</div>
+    </div>
+    <div class="col">
+      <div>µ</div>
+    </div>
+    <div class="col">
+      <div>µ</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3>Variable width</h3>
+    <pre>
+&lt;div class="row"&gt;
+  &lt;div class="col"&gt;&lt;/div&gt;
+  &lt;div class="col"&gt;&lt;/div&gt;
+  &lt;div class="col-6"&gt;&lt;/div&gt;
+  &lt;div class="col"&gt;&lt;/div&gt;
+  &lt;div class="col"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div>µ</div>
+    </div>
+    <div class="col">
+      <div>µ</div>
+    </div>
+    <div class="col col-6">
+      <div>µ.col-6</div>
+    </div>
+    <div class="col">
+      <div>µ</div>
+    </div>
+    <div class="col">
+      <div>µ</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3>No gutters</h3>
+    <p>This is uses BASSCSS approach so you have to specify widths.</p>
+    <pre>
+&lt;div class="clearfix"&gt;
+  &lt;div class="col col-4"&gt;&lt;/div&gt;
+  &lt;div class="col col-4"&gt;&lt;/div&gt;
+  &lt;div class="col col-4"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+
+    <div class="clearfix">
+      <div class="col col-4">
+        <div>µ</div>
+      </div>
+      <div class="col col-4">
+        <div>µ</div>
+      </div>
+      <div class="col col-4">
+        <div>µ</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <center>
+      With
+      <span style="color: #FF4136">♥</span>
+      <a href="http://firedev.com">firedev.com</a>
+    </center>
+  </div>
+</body>
+
+</html>
